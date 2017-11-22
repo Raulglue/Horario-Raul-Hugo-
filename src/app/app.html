@@ -1,1 +1,71 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content" type="overlay" (ionClose) = "reset()">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Cursos</ion-title>
+    </ion-toolbar>
+
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item (click)="abrirHome()">Home</button>
+      <button ion-item (click)="abrirEso()">ESO</button>
+      <ion-list *ngIf="eso">
+        <button ion-button outline *ngIf="esoprimero" color = "danger" nav-clear menu-close (click)="abrirEsoPrimero()">Primero</button>
+        <button ion-button outline *ngIf="!esoprimero" color = "primary" nav-clear menu-close (click)="abrirEsoPrimero()">Primero</button>
+        <ion-list *ngIf="esoprimero">
+            <button ion-button full nav-clear menu-close>A</button>
+            <button ion-button full nav-clear menu-close>B</button>
+          </ion-list>
+          <br>
+        <button ion-button outline *ngIf="esosegundo" color = "danger" nav-clear menu-close (click)= "abrirEsoSegundo()">Segundo</button>
+        <button ion-button outline *ngIf="!esosegundo" color = "primary" nav-clear menu-close (click)="abrirEsoSegundo()">Segundo</button>
+        <ion-list *ngIf="esosegundo">
+            <button ion-button full nav-clear menu-close>A</button>
+            <button ion-button full nav-clear menu-close>B</button>
+            <button ion-button full nav-clear menu-close>C</button>
+          </ion-list>
+          <br>
+        <button ion-button outline *ngIf="esotercero" color = "danger" nav-clear menu-close (click)= "abrirEsoTercero()">Tercero</button>
+        <button ion-button outline *ngIf="!esotercero" color = "primary" nav-clear menu-close (click)="abrirEsoTercero()">Tercero</button>
+        <ion-list *ngIf="esotercero">
+            <button ion-button full nav-clear menu-close>A</button>
+            <button ion-button full nav-clear menu-close>B</button>
+            <button ion-button full nav-clear menu-close>C</button>
+          </ion-list>
+      </ion-list>
+      <button  ion-item (click)="abrirBach()">Bachillerato</button>
+      <ion-list *ngIf="bach">
+          <button ion-button outline *ngIf="bachprimero" color = "danger" nav-clear menu-close (click)= "abrirBachPrimero()">Primero</button>
+          <button ion-button outline *ngIf="!bachprimero" color = "primary" nav-clear menu-close (click)="abrirBachPrimero()">Primero</button>
+          <ion-list *ngIf="bachprimero">
+              <button ion-button full nav-clear menu-close>A</button>
+              <button ion-button full nav-clear menu-close>B</button>
+            </ion-list>
+            <br>
+          <button ion-button outline *ngIf="bachsegundo" color = "danger" nav-clear menu-close (click)= "abrirBachSegundo()">Segundo</button>
+          <button ion-button outline *ngIf="!bachsegundo" color = "primary" nav-clear menu-close (click)="abrirBachSegundo()">Segundo</button>
+          <ion-list *ngIf="bachsegundo">
+              <button ion-button full nav-clear menu-close>A</button>
+              <button ion-button full nav-clear menu-close>B</button>
+            </ion-list>
+        </ion-list>
+      <button  ion-item (click)="abrirFp()">FP</button>
+      <ion-list *ngIf="fp">
+          <button ion-button outline *ngIf="fpadmin" color = "danger" nav-clear menu-close (click)= "abrirFpAdmin()">Administracion</button>
+          <button ion-button outline *ngIf="!fpadmin" color = "primary" nav-clear menu-close (click)="abrirFpAdmin()">Administracion</button>
+          <ion-list *ngIf="fpadmin">
+              <button ion-button full nav-clear menu-close>1º</button>
+              <button ion-button full nav-clear menu-close>2º</button>
+            </ion-list>
+          <button ion-button outline *ngIf="fpdam" color = "danger" nav-clear menu-close (click)= "abrirFpDam()">Desarrollo aplicaciones</button>
+          <button ion-button outline *ngIf="!fpdam" color = "primary" nav-clear menu-close (click)="abrirFpDam()">Desarrollo aplicaciones</button>
+          <ion-list *ngIf="fpdam">
+              <button ion-button full nav-clear menu-close>1º</button>
+              <button ion-button full nav-clear menu-close>2º</button>
+            </ion-list>
+        </ion-list>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
