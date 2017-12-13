@@ -1,0 +1,15 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Nombre completo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ul *ngFor="let clase of clases">
+  <li>{{clase}}</li>
+</ul>
+<button ion-button (click)="dismiss()">Salir</button>
+</ion-content>

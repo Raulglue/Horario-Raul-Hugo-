@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>horario </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+   
+  <ion-grid  >
+    <ion-row *ngFor="let dia of horario; let i = index" >
+      <ion-col  [ngStyle]="{'background-color':dameClase(hora),'font-size':' 15px' }" *ngFor="let hora of dia" (click)="muestraNombre(hora)">{{hora}} </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <br>
+  <br>
+<button full ion-button (click)="goHome()"> HOME</button>
+</ion-content>

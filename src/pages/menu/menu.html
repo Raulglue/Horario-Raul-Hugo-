@@ -1,0 +1,23 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>{{titulo}} </ion-title>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-navbar>
+    
+    </ion-header>
+
+    
+<ion-content padding>
+  <a full  *ngFor="let curs of cursoBotones; let i = index ">{{nombreCursos[i]}} 
+    <button ion-button full *ngFor= "let cur of curs; let y = index"
+     (click)="abrirHorario(idSeleccionada[((i*2)+i)+y])" >{{cur}}</button>
+  </a>
+
+  <br>
+  <br>
+  <br>
+<button full ion-button (click)="goHome()"> HOME</button>
+</ion-content>
